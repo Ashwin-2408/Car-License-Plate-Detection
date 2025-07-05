@@ -1,0 +1,49 @@
+# Python bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+env/
+venv/
+*.env
+*.venv
+
+# Jupyter Notebooks checkpoints
+.ipynb_checkpoints/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# YOLOv8 training outputs
+runs/
+*.pt
+*.onnx
+*.engine
+*.torchscript
+
+# Roboflow exports
+*.zip
+# Or ignore specific Roboflow folders if large
+Number-Plate-Detection.v1i.yolov8/
+
+# Datasets
+train/
+valid/
+test/
+data.yaml
+
+# Logs and plots
+*.log
+*.png
+*.jpg
+results.csv
+
+# Environment/config
+*.env
+.env.*
+
+# VS Code or IDE config
+.vscode/
+.idea/
