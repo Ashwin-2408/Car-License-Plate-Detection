@@ -6,6 +6,21 @@ import re
 from ultralytics import YOLO
 from PIL import Image
 import easyocr
+import shutil
+
+
+model_dir = os.path.join(os.path.expanduser('~'), '.EasyOCR')
+
+
+broken_zip = os.path.join(model_dir, 'craft_mlt_25k.zip')
+if os.path.exists(broken_zip):
+    os.remove(broken_zip)
+
+if os.path.exists(model_dir):
+    try:
+        shutil.rmtree(model_dir)
+    except Exception as e:
+        print(f"Error removing EasyOCR model directory: {e}")
 
 
 reader = easyocr.Reader(['en'], gpu=False)
