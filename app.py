@@ -77,9 +77,9 @@ if uploaded_file:
 
             ocr_text = ''
             if ocr_results:
-             
-                best_result = max(ocr_results, key=lambda x: x[2]) 
-                ocr_text = re.sub(r'[^A-Z0-9]', '', ocr_text.upper())
+                best_result = max(ocr_results, key=lambda x: x[2])  # highest confidence
+                raw_text = best_result[1]
+                ocr_text = re.sub(r'[^A-Z0-9]', '', raw_text.upper())
 
             annotated = img_array.copy()
             cv2.rectangle(annotated, (x1, y1), (x2, y2), (0, 255, 0), 2)
